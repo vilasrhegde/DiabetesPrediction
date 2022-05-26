@@ -1,11 +1,9 @@
-from telnetlib import BM
-from unicodedata import name
 import numpy as np
 import pickle
 import streamlit as st
 import time
 
-loaded_model = pickle.load(open('trained_dibetes_model.sav','rb'))
+loaded_model = pickle.load(open('./trained_dibetes_model.sav','rb'))
 
 
 #creating the function to prediction
