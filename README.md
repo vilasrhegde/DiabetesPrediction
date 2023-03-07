@@ -1,6 +1,7 @@
 # Diabetes Prediction
 > A webpage built using Support Vector Machine algorithm and Streamlit.
 
+### Check it out [here](https://diabetespredictionvilashegde.streamlit.app/)
 ## Things that I have used
 - Supervised machine learning algorithm (SVM)
 - Numpy
@@ -10,6 +11,7 @@
 
 
 ![Page](page.png)
+
 
 
 ## How did I do?
