@@ -1,14 +1,23 @@
 import numpy as np
 import pickle
 import streamlit as st
-import time
+from datetime import date
 
 loaded_model = pickle.load(open('./trained_dibetes_model.sav','rb'))
 
-st.write(pickle.format_version)
 
 #creating the function to prediction
-
+st.set_page_config(
+    page_title="Diabetes Prediction",
+    page_icon="random",
+    layout="wide",
+    initial_sidebar_state="auto",
+    menu_items={
+        'Get Help': 'https://vilasrhegde.github.io/',
+        'Report a bug': "https://www.linkedin.com/in/vilasrhegde/",
+        'About': "# Made by Vilas Hegde!"
+    }
+)
 def prediction(input_data):
     
     input_data_as_numpy_array = np.asarray(input_data)
@@ -32,15 +41,24 @@ def main():
     st.write("Enter examined details:")
 
     #getting the input data from the user
+    col1,col2,col3,col4=st.columns(4)
 
-    Pregnancies = st.text_input('Number of Pregnancies')
-    Glucose = st.text_input('Blood-Glucose level')       
-    BloodPressure = st.text_input('Blood Pressure level')    
-    SkinThickness = st.text_input('Skin Thickness value')   
-    Insulin = st.text_input('Insulin level')   
-    BMI = st.text_input('BMI value')   
-    DiabetesPedigreeFunction = st.text_input('Diabetes Pedigree Function value')   
-    Age = st.text_input('Age of the Person')   
+    with col1:
+        Pregnancies = st.text_input('Number of Pregnancies',value=3)
+    with col2:
+        Glucose = st.text_input('Blood-Glucose level',value=148)       
+    with col3:
+        BloodPressure = st.text_input('Blood Pressure level',value=72)    
+    with col4:
+        SkinThickness = st.text_input('Skin Thickness value',value=35)   
+    with col1:
+        Insulin = st.text_input('Insulin level',value=0)   
+    with col2:
+        BMI = st.text_input('BMI value',value=33.6)   
+    with col3:
+        DiabetesPedigreeFunction = st.text_input('Diabetes Pedigree Function value',value=0.63)   
+    with col4:
+        Age = st.text_input('Age of the Person',value=52)   
 
     #code for prediction
     diagnosis = ''
@@ -54,12 +72,12 @@ def main():
     # st.balloons()
         st.balloons()
 
-    if(diagnosis!="Diabetic!"):
-        st.info(diagnosis)
-    else:
-        st.error(diagnosis)
+        if(diagnosis!="Diabetic!"):
+            st.info(diagnosis)
+        else:
+            st.error(diagnosis)
         
-
+    st.markdown(f":red[©️ Vilas Hegde - {date.today().year}]")
 
 
 if __name__ == '__main__':
