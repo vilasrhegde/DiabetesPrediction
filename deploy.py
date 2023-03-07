@@ -5,6 +5,7 @@ import time
 
 loaded_model = pickle.load(open('./trained_dibetes_model.sav','rb'))
 
+st.write(pickle.format_version)
 
 #creating the function to prediction
 
