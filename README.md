@@ -10,7 +10,7 @@
 - Streamlit
 
 
-![Page](page.png)
+![image](https://user-images.githubusercontent.com/85540091/224487541-0e20b4a6-6bd7-41e2-949b-80fd6eafb08a.png)
 
 
 
